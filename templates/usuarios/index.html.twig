@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UsuariosController!
+{% endblock %}
+
+{% block body %}
+
+	<h1>Hola</h1>
+	
+	<button id="" style="background-color:rgb(36, 2, 33);border-radius:10px; margin:10px"><a style="color:white"  href="{{ path('crear_usuario') }}">Crear Usuario</a></button>
+
+	<table id="proveedores" border="solid 1px" style="background-color:black; color:white; border-radius:10px">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>edad</th>
+			<th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+		{% for usuario in usuarios %}
+        <tr>
+            <td>{{usuario.id}}</td>
+            <td>{{usuario.nombre|e}}</td>
+            <td>{{usuario.apellido}}</td>
+            <td>{{usuario.edad}}</td>
+            <td>
+                <button style="background-color: rgb(96, 94, 143); border-radius:10px; margin:10px"><a style="color:white" href="{{path('ver_usuario',{'id': usuario.id}) }}">Ver Usuario</a></button>
+{#                 <button type="submit" style="background-color: rgba(11, 232, 240, 0.863); border-radius:10px; margin:10px"></button><a href="{{path('eliminar_usuario')}}">Borra</a></button>'
+ #}            </td>
+			{% endfor %}
+        </tr>
+    </tbody>
+    </table>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Perfil de Usuario
+{% endblock %}
+
+{% block body %}
+<h1>Vista Usuario</h1>
+<td>
+    <button><a href="{{path('editar_usuario',{'id':usuario.id})}}">Editar</a></button>
+</td>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ usuario.id }}</td>
+            </tr>
+            <tr>
+                <th>nombre</th>
+                <td>{{ usuario.nombre}}</td>
+            </tr>
+            <tr>
+                <th>Apellido</th>
+                <td>{{ usuario.apellido}}</td>
+            </tr>
+            <tr>
+                <th>edad</th>
+                <td>{{ usuario.edad }}</td>
+            </tr>
+            <tr>
+               
+            </tr>
+        </tbody>
+    </table>
+    <button><a href="{{path('crear_post')}}">crear Post</a></button>
+{% endblock %}
